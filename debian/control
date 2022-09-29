@@ -1,0 +1,36 @@
+Source: golang-github-google-gofuzz
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Tianon Gravi <tianon@debian.org>,
+           Tim Potter <tpot@hpe.com>,
+Section: golang
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               tzdata,
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-google-gofuzz
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-google-gofuzz.git
+Homepage: https://github.com/google/gofuzz
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/google/gofuzz
+
+Package: golang-github-google-gofuzz-dev
+Architecture: all
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Multi-Arch: foreign
+Description: Fuzz testing for Go
+ gofuzz is a library for populating go objects with random values.
+ .
+ This is useful for testing:
+ .
+  * Do your project's objects really serialize/unserialize correctly in all
+    cases?
+  * Is there an incorrectly formatted object that will cause your project to
+    panic?
+ .
+ Import with import "github.com/google/gofuzz"
+ .
+ This package contains the source.
